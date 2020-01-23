@@ -1,0 +1,17 @@
+span {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin-top: 20px;
+}
+
+span i {
+  margin-left: 10px;
+  color: #a5a5a5;
+}
+
+aside span p {
+  margin-left: 15px;
+  color: #a5a5a5;
+  font-size: 20px;
+}

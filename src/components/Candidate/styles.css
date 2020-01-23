@@ -1,0 +1,38 @@
+li.candidate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  height: 70px;
+  border-radius: 5px;
+}
+
+li.candidate .candidate-name-photo {
+  margin-bottom: 15px;
+}
+
+li.candidate .action-icons {
+  margin-bottom: 15px;
+}
+
+li.candidate img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+li.candidate span {
+  width: 100px;
+  height: 100%;
+}
+
+li.candidate .candidate-name {
+  margin-left: 15px;
+  color: #6c7885;
+  font-size: 20px;
+}
+
+li.candidate > p:nth-of-type(n + 1) {
+  color: #a5a5a5;
+}

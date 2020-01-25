@@ -4,3 +4,11 @@ aside {
   box-shadow: 6px 0px 10px -10px #888;
   height: 100%;
 }
+
+.links {
+  text-decoration: none;
+}
+
+.selected {
+  text-decoration: overline underline;
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Todos from "./components/Todos";
-import Atendidos from "./components/Atendidos";
-import Lixeira from "./components/Lixeira";
+import Todos from "./components/pages/Todos";
+import Atendidos from "./components/pages/Atendidos";
+import Lixeira from "./components/pages/Lixeira";
 
 export const Routes = () => {
   return (

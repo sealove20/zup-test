@@ -12,9 +12,10 @@ export default function Sidebar() {
         className="links"
         activeStyle={{
           fontWeight: "bold",
-          color: "red"
+          color: "#AEC000"
         }}
         to="/"
+        exact
       >
         <SidebarItem iconName={"select_all"} text={"Todos"} />
       </NavLink>
@@ -22,7 +23,7 @@ export default function Sidebar() {
         className="links"
         activeStyle={{
           fontWeight: "bold",
-          color: "red"
+          color: "#AEC000"
         }}
         to="/atendidos"
       >
@@ -32,7 +33,7 @@ export default function Sidebar() {
         className="links"
         activeStyle={{
           fontWeight: "bold",
-          color: "red"
+          color: "#AEC000"
         }}
         to="/lixeira"
       >

@@ -1,19 +1,16 @@
 import React from "react";
 import "./styles.css";
 
-export default function Candidates() {
+export default function Candidates({ name, email, phone, address, photo }) {
   return (
     <li className="candidate">
       <span className="candidate-name-photo">
-        <img
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-          alt="user"
-        />
-        <p className="candidate-name">Tom</p>
+        <img src={photo.thumbnail} alt="user" />
+        <p className="candidate-name">{name.first}</p>
       </span>
-      <p className="candidadte-email">tom@gmail.com</p>
-      <p className="candidate-phone">(960)-861-1809</p>
-      <p className="candidate-address">São Paulo - SP</p>
+      <p className="candidadte-email">{email}</p>
+      <p className="candidate-phone">{phone}</p>
+      <p className="candidate-address">{address.city}</p>
       <span className="action-icons">
         <i className="material-icons">delete</i>
         <i className="material-icons">select_all</i>

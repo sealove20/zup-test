@@ -11,7 +11,14 @@ export function UsersProvider({ children }) {
     async function getAllUsers() {
       const data = await getUsers();
       const { results } = data;
-      setUsers(results);
+      const data2 = results.map(d => ({
+        ...d,
+        isAtendido: false,
+        isLixeira: false,
+        isTodos: false
+      }));
+      console.log("DATA@", data2);
+      setUsers(data2);
       setLoading(false);
       console.log("QUEISSO", data.results);
     }

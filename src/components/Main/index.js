@@ -18,7 +18,7 @@ export default function Main() {
           <ul>
             {users.map(user => (
               <Candidate
-                key={user.id}
+                key={user.id.value}
                 name={user.name}
                 email={user.email}
                 phone={user.phone}

@@ -17,6 +17,7 @@
 
 .candidate .action-icons {
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .candidate img {

@@ -1,11 +1,14 @@
 import React from "react";
 
-import "./styles.css";
-
 import Main from "../../Main";
 
-function Todos() {
-  return <Main />;
+function Todos(props) {
+  return (
+    <>
+      <Main />
+      {console.log(props.match)}
+    </>
+  );
 }
 
 export default Todos;

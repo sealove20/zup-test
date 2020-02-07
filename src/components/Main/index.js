@@ -6,8 +6,22 @@ import Header from "../templates/Header";
 
 import { useUsers } from "../../context/Users";
 
+import "./styles.css";
+
 export default function Main() {
-  const { users } = useUsers();
+  const { users, setUsers } = useUsers();
+
+  useEffect(() => {
+    console.log("blabla");
+  }, [users]);
+
+  function toggleLixeira(phone) {
+    const newUsers = users.map(user => {
+      const { isLixeira } = user;
+      return phone === user.phone ? { ...user, isLixeira: !isLixeira } : user;
+    });
+    setUsers(newUsers);
+  }
 
   return (
     <div id="app">
@@ -18,12 +32,9 @@ export default function Main() {
           <ul>
             {users.map(user => (
               <Candidate
-                key={user.id.value}
-                name={user.name}
-                email={user.email}
-                phone={user.phone}
-                address={user.location}
-                photo={user.picture}
+                user={user}
+                key={user.phone}
+                toggleLixeira={toggleLixeira}
               />
             ))}
           </ul>

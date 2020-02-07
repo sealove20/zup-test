@@ -1,12 +1,3 @@
-main {
-  background: #f9f9f9;
-  margin-left: 55px;
-  margin-top: 60px;
-  box-shadow: 1px 1px 10px -5px #888;
-  border-radius: 5px;
-  width: 80%;
-}
-
 #app {
   display: flex;
   flex-direction: column;
@@ -17,4 +8,13 @@ main {
   display: flex;
   width: 68%;
   background: #f9f9f9;
+}
+
+main {
+  background: #f9f9f9;
+  margin-left: 55px;
+  margin-top: 60px;
+  box-shadow: 1px 1px 10px -5px #888;
+  border-radius: 5px;
+  width: 80%;
 }

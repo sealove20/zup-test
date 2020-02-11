@@ -11,14 +11,26 @@ import "./styles.css";
 export default function Main() {
   const { users, setUsers } = useUsers();
 
-  useEffect(() => {
-    console.log("blabla");
-  }, [users]);
-
   function toggleLixeira(phone) {
     const newUsers = users.map(user => {
       const { isLixeira } = user;
       return phone === user.phone ? { ...user, isLixeira: !isLixeira } : user;
+    });
+    setUsers(newUsers);
+  }
+
+  function toggleAtendido(phone) {
+    const newUsers = users.map(user => {
+      const { isAtendido } = user;
+      return phone === user.phone ? { ...user, isAtendido: !isAtendido } : user;
+    });
+    setUsers(newUsers);
+  }
+
+  function toggleTodos(phone) {
+    const newUsers = users.map(user => {
+      const { isTodos } = user;
+      return phone === user.phone ? { ...user, isTodos: !isTodos } : user;
     });
     setUsers(newUsers);
   }
@@ -35,6 +47,8 @@ export default function Main() {
                 user={user}
                 key={user.phone}
                 toggleLixeira={toggleLixeira}
+                toggleAtendido={toggleAtendido}
+                toggleTodos={toggleTodos}
               />
             ))}
           </ul>

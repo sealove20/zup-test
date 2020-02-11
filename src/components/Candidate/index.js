@@ -3,9 +3,22 @@ import "./styles.css";
 
 import { Link } from "react-router-dom";
 
-export default function Candidates({ user, toggleLixeira }) {
-  const { name, email, phone, location, picture, isLixeira } = user;
-  console.log("ASJIASJJASUASHUSAHUAHUASHUASHUSAHUASHUSHUASHUA", user);
+export default function Candidates({
+  user,
+  toggleLixeira,
+  toggleAtendido,
+  toggleTodos
+}) {
+  const {
+    name,
+    email,
+    phone,
+    location,
+    picture,
+    isLixeira,
+    isAtendido,
+    isTodos
+  } = user;
   return (
     <Link
       to={{
@@ -25,7 +38,7 @@ export default function Candidates({ user, toggleLixeira }) {
         <span className="action-icons">
           <i
             className="material-icons"
-            style={{ color: isLixeira ? "#f0f" : "#ff0" }}
+            style={{ color: isLixeira ? "#b3c02b" : "#707d89" }}
             onClick={e => {
               e.preventDefault();
               toggleLixeira(phone);
@@ -33,8 +46,26 @@ export default function Candidates({ user, toggleLixeira }) {
           >
             delete
           </i>
-          <i className="material-icons">select_all</i>
-          <i className="material-icons">check</i>
+          <i
+            className="material-icons"
+            style={{ color: isTodos ? "#b3c02b" : "#707d89" }}
+            onClick={e => {
+              e.preventDefault();
+              toggleTodos(phone);
+            }}
+          >
+            select_all
+          </i>
+          <i
+            className="material-icons"
+            style={{ color: isAtendido ? "#b3c02b" : "#707d89" }}
+            onClick={e => {
+              e.preventDefault();
+              toggleAtendido(phone);
+            }}
+          >
+            check
+          </i>
         </span>
       </li>
     </Link>

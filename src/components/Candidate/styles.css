@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.candidate i {
+  outline-offset: 50px;
+}
+
 .candidate img {
   border-radius: 50px;
 }

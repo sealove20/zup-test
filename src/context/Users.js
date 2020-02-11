@@ -17,10 +17,8 @@ export function UsersProvider({ children }) {
         isLixeira: false,
         isTodos: false
       }));
-      console.log("DATA@", data2);
       setUsers(data2);
       setLoading(false);
-      console.log("QUEISSO", data.results);
     }
     getAllUsers();
   }, []);

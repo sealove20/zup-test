@@ -11,26 +11,27 @@ import "./styles.css";
 export default function Main() {
   const { users, setUsers } = useUsers();
 
-  function toggleLixeira(phone) {
+  function toggleTrash(phone) {
     const newUsers = users.map(user => {
-      const { isLixeira } = user;
-      return phone === user.phone ? { ...user, isLixeira: !isLixeira } : user;
+      console.log(user);
+      const { isTrash } = user;
+      return phone === user.phone ? { ...user, isTrash: !isTrash } : user;
     });
     setUsers(newUsers);
   }
 
-  function toggleAtendido(phone) {
+  function toggleAttended(phone) {
     const newUsers = users.map(user => {
-      const { isAtendido } = user;
-      return phone === user.phone ? { ...user, isAtendido: !isAtendido } : user;
+      const { isAttended } = user;
+      return phone === user.phone ? { ...user, isAttended: !isAttended } : user;
     });
     setUsers(newUsers);
   }
 
-  function toggleTodos(phone) {
+  function toggleAll(phone) {
     const newUsers = users.map(user => {
-      const { isTodos } = user;
-      return phone === user.phone ? { ...user, isTodos: !isTodos } : user;
+      const { isAll } = user;
+      return phone === user.phone ? { ...user, isAll: !isAll } : user;
     });
     setUsers(newUsers);
   }
@@ -46,9 +47,9 @@ export default function Main() {
               <Candidate
                 user={user}
                 key={user.phone}
-                toggleLixeira={toggleLixeira}
-                toggleAtendido={toggleAtendido}
-                toggleTodos={toggleTodos}
+                toggleTrash={toggleTrash}
+                toggleAttended={toggleAttended}
+                toggleAll={toggleAll}
               />
             ))}
           </ul>

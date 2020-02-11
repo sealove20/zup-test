@@ -10,14 +10,21 @@
 
 .candidate .candidate-name-photo {
   display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  width: 100px;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  color: #6c7885;
 }
 
 .candidate .action-icons {
   margin-bottom: 15px;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+  display: flex;
+  width: 100px;
+  height: 100%;
+  color: #6c7885;
 }
 
 .candidate i {
@@ -28,26 +35,22 @@
   border-radius: 50px;
 }
 
-.candidate span {
-  display: flex;
-  width: 100px;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
-  color: #6c7885;
-}
-
 .candidate .candidate-name {
-  margin-left: 15px;
   color: #6c7885;
   font-size: 20px;
+  width: 100px;
+  margin-left: 15px;
 }
 
 .candidate .candidadte-email {
-  width: 200px;
+  width: 250px;
 }
 
-.candidate .candidadte-phone {
+.candidate .candidate-phone {
+  width: 110px;
+}
+
+.candidate .candidate-address {
   width: 100px;
 }
 

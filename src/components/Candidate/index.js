@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 export default function Candidates({
   user,
-  toggleLixeira,
-  toggleAtendido,
-  toggleTodos
+  toggleTrash,
+  toggleAttended,
+  toggleAll,
+  toggleIcon
 }) {
   const {
     name,
@@ -15,9 +16,9 @@ export default function Candidates({
     phone,
     location,
     picture,
-    isLixeira,
-    isAtendido,
-    isTodos
+    isTrash,
+    isAttended,
+    isAll
   } = user;
   return (
     <Link
@@ -38,30 +39,30 @@ export default function Candidates({
         <span className="action-icons">
           <i
             className="material-icons"
-            style={{ color: isLixeira ? "#b3c02b" : "#707d89" }}
+            style={{ color: isTrash ? "#b3c02b" : "#707d89" }}
             onClick={e => {
               e.preventDefault();
-              toggleLixeira(phone);
+              toggleTrash(phone);
             }}
           >
             delete
           </i>
           <i
             className="material-icons"
-            style={{ color: isTodos ? "#b3c02b" : "#707d89" }}
+            style={{ color: isAll ? "#b3c02b" : "#707d89" }}
             onClick={e => {
               e.preventDefault();
-              toggleTodos(phone);
+              toggleAll(phone);
             }}
           >
             select_all
           </i>
           <i
             className="material-icons"
-            style={{ color: isAtendido ? "#b3c02b" : "#707d89" }}
+            style={{ color: isAttended ? "#b3c02b" : "#707d89" }}
             onClick={e => {
               e.preventDefault();
-              toggleAtendido(phone);
+              toggleAttended(phone);
             }}
           >
             check

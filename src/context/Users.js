@@ -9,15 +9,15 @@ export function UsersProvider({ children }) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     async function getAllUsers() {
-      const data = await getUsers();
-      const { results } = data;
-      const data2 = results.map(d => ({
-        ...d,
-        isAtendido: false,
-        isLixeira: false,
-        isTodos: false
+      const userData = await getUsers();
+      const { results } = userData;
+      const data = results.map(user => ({
+        ...user,
+        isAttended: false,
+        isTrash: false,
+        isAll: false
       }));
-      setUsers(data2);
+      setUsers(data);
       setLoading(false);
     }
     getAllUsers();

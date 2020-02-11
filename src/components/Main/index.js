@@ -13,7 +13,6 @@ export default function Main() {
 
   function toggleTrash(phone) {
     const newUsers = users.map(user => {
-      console.log(user);
       const { isTrash } = user;
       return phone === user.phone ? { ...user, isTrash: !isTrash } : user;
     });

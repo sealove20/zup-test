@@ -1,4 +1,4 @@
-export const ConvertStates = val => {
+export const convertStates = val => {
   let data;
 
   switch (val.toUpperCase()) {

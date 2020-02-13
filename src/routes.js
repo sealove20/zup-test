@@ -9,9 +9,9 @@ import SeeUserData from "./components/pages/SeeUserData";
 export const Routes = () => {
   return (
     <Switch>
-      <Route path="/" component={Todos} exact />
+      <Route path="/" component={Todos} name="todos" exact />
       <Route path="/atendidos" component={Atendidos} strict />
-      <Route path="/lixeira" component={Lixeira} exact />
+      <Route path="/lixeira" name="todos" component={Lixeira} exact />
       <Route path="/lixeira/:phone" component={SeeUserData} />
     </Switch>
   );

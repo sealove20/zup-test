@@ -1,0 +1,8 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 62%;
+  height: 58%;
+  border-radius: 50px;
+}

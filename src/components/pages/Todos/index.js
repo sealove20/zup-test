@@ -6,7 +6,6 @@ function Todos(props) {
   return (
     <>
       <Main />
-      {console.log(props.match)}
     </>
   );
 }

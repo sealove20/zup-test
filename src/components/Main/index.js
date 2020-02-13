@@ -5,10 +5,11 @@ import Candidate from "../Candidate";
 import Header from "../templates/Header";
 
 import { useUsers } from "../../context/Users";
+import getFilter from "../../utils/getFilter";
 
 import "./styles.css";
 
-export default function Main() {
+export default function Main(props) {
   const { users, setUsers } = useUsers();
 
   function toggleTrash(phone) {
@@ -37,12 +38,12 @@ export default function Main() {
 
   return (
     <div id="app">
-      <Header />
+      <Header where={props.where} />
       <div id="wraper">
         <Sidebar />
         <main>
           <ul>
-            {users.map(user => (
+            {getFilter(users, props.where).map(user => (
               <Candidate
                 user={user}
                 key={user.phone}

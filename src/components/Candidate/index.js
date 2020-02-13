@@ -3,14 +3,13 @@ import "./styles.css";
 
 import { Link } from "react-router-dom";
 
-import { ConvertStates } from "../../utils/ConvertState";
+import { convertStates } from "../../utils/convertState";
 
 export default function Candidates({
   user,
   toggleTrash,
   toggleAttended,
-  toggleAll,
-  toggleIcon
+  toggleAll
 }) {
   const {
     name,
@@ -23,7 +22,7 @@ export default function Candidates({
     isAll
   } = user;
 
-  const address = `${city} - ${ConvertStates(state)}`;
+  const address = `${city} - ${convertStates(state)}`;
 
   return (
     <Link

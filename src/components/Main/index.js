@@ -10,7 +10,17 @@ import getFilter from "../../utils/getFilter";
 import "./styles.css";
 
 export default function Main(props) {
+  const [query, setQuery] = useState("");
   const { users, setUsers } = useUsers();
+  const [searchResult, setSearchResult] = useState([]);
+  const filteredUsers = getFilter(users, props.where);
+
+  useEffect(() => {
+    const results = filteredUsers.filter(user =>
+      user.name.first.includes(query)
+    );
+    setSearchResult(results);
+  }, [query, users]);
 
   function toggleTrash(phone) {
     const newUsers = users.map(user => {
@@ -36,14 +46,18 @@ export default function Main(props) {
     setUsers(newUsers);
   }
 
+  function handleChange(e) {
+    setQuery(e.target.value);
+  }
+
   return (
     <div id="app">
-      <Header where={props.where} />
+      <Header handleChange={handleChange} query={query} />
       <div id="wraper">
-        <Sidebar />
+        <Sidebar query={query} />
         <main>
           <ul>
-            {getFilter(users, props.where).map(user => (
+            {searchResult.map(user => (
               <Candidate
                 user={user}
                 key={user.phone}
